@@ -30,7 +30,7 @@ function Navbar() {
           />
         </li>
         <li className="mb-8 sm:mb-0">
-          <Link to="/client" className="hover:text-blue-800">
+          <Link to="/clients" className="hover:text-blue-800">
             Clientes
           </Link>
         </li>
