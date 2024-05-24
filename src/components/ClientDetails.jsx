@@ -1,4 +1,4 @@
-import { clientDetailsPropType } from "../../utils/prop-types-defs";
+import { clientDetailsPropType } from "../utils/prop-types-defs";
 
 function ClientDetails({ client }) {
   if (!client) {
