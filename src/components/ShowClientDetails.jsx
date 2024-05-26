@@ -1,10 +1,23 @@
-import { clientDetailsPropType } from "../utils/prop-types-defs";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import api from "../api/api";
 
-function ClientDetails({ client }) {
-  if (!client) {
-    return <div className="text-center mt-10">Cargando...</div>;
-  }
+function ClientDetailsContainer() {
+  const [client, setClient] = useState({});
+  const { id } = useParams();
 
+  useEffect(() => {
+    const fetchClientDetails = async () => {
+      try {
+        const response = await api.get(`/client/company/${id}`);
+        setClient(response.data);
+      } catch (error) {
+        console.log("Error Feching Clients", error);
+      }
+    };
+
+    fetchClientDetails();
+  }, [id]);
   return (
     <>
       <div className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-lg">
@@ -50,8 +63,4 @@ function ClientDetails({ client }) {
   );
 }
 
-ClientDetails.propTypes = {
-  client: clientDetailsPropType,
-};
-
-export default ClientDetails;
+export default ClientDetailsContainer;

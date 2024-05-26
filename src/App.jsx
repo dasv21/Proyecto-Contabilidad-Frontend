@@ -1,23 +1,21 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
-import ClientListContainer from "./components/ClientListContainer";
-import ClientDetailsContainer from "./components/ClientDetailsContainer";
+import ShowClientList from "./components/ShowClientList";
+import ShowClientDetails from "./components/ShowClientDetails";
+import AddClientForm from "./components/AddClientForm";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Header />
-        <main className="container mx-auto p-2">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/clients" element={<ClientListContainer />} />
-            <Route path="/clients/:id" element={<ClientDetailsContainer />} />
-          </Routes>
-        </main>
-      </Router>
-    </>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/clients" element={<ShowClientList />} />
+        <Route path="/clients/add" element={<AddClientForm />} />
+        <Route path="/clients/:id" element={<ShowClientDetails />} />
+      </Routes>
+    </Router>
   );
 }
 
