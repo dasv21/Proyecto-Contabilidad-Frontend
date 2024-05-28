@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import ShowClientList from "./components/ShowClientList";
 import ShowClientDetails from "./components/ShowClientDetails";
 import AddClientForm from "./components/AddClientForm";
+import EditClientForm from "./components/EditClientForm";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/clients" element={<ShowClientList />} />
         <Route path="/clients/add" element={<AddClientForm />} />
+        <Route path="/clients/:id/edit" element={<EditClientForm />} />
         <Route path="/clients/:id" element={<ShowClientDetails />} />
       </Routes>
     </Router>

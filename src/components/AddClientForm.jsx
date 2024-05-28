@@ -38,13 +38,14 @@ function AddClient() {
 
   return (
     <div className="mx-auto my-4 max-w-xl">
-      <h1 className="text-2xl font-bold mb-4">Agregar Cliente</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Agregar Cliente</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-700">RIF</label>
           <input
             type="text"
             name="rif"
+            placeholder="RIF"
             value={formData.rif}
             onChange={handleChange}
             className="w-full px-2 py-1 border rounded"
@@ -56,6 +57,7 @@ function AddClient() {
           <input
             type="text"
             name="shortName"
+            placeholder="Nombre Corto"
             value={formData.shortName}
             onChange={handleChange}
             className="w-full px-2 py-1 border rounded"
@@ -64,9 +66,11 @@ function AddClient() {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Nombre Legal</label>
+
           <input
             type="text"
             name="legalName"
+            placeholder="Nombre Legal"
             value={formData.legalName}
             onChange={handleChange}
             className="w-full px-2 py-1 border rounded"
@@ -78,6 +82,7 @@ function AddClient() {
           <input
             type="email"
             name="email"
+            placeholder="Email"
             value={formData.email}
             onChange={handleChange}
             className="w-full px-2 py-1 border rounded"
@@ -88,6 +93,7 @@ function AddClient() {
           <label className="block text-gray-700">Teléfonos</label>
           <input
             type="text"
+            placeholder="Principal"
             value={formData.phones[0]}
             onChange={(e) => handlePhoneChange(0, e.target.value)}
             className="w-full px-2 py-1 border rounded mb-2"
@@ -96,6 +102,7 @@ function AddClient() {
           <input
             type="text"
             value={formData.phones[1]}
+            placeholder="Secundario"
             onChange={(e) => handlePhoneChange(1, e.target.value)}
             className="w-full px-2 py-1 border rounded"
           />
@@ -105,6 +112,7 @@ function AddClient() {
           <input
             type="text"
             name="address"
+            placeholder="Dirección"
             value={formData.address}
             onChange={handleChange}
             className="w-full px-2 py-1 border rounded"
@@ -116,6 +124,7 @@ function AddClient() {
           <input
             type="text"
             name="accountant"
+            placeholder="Contador Encargado"
             value={formData.accountant}
             onChange={handleChange}
             className="w-full px-2 py-1 border rounded"

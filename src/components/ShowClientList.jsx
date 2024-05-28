@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import api from "../api/api";
 import { Link } from "react-router-dom";
 
-function ClientListContainer() {
+function ShowClientList() {
   const [clients, setClients] = useState([]);
 
   useEffect(() => {
-    const fetchClients = async () => {
+    const getClients = async () => {
       try {
         const response = await api.get("/client/company");
         setClients(response.data);
@@ -15,17 +15,17 @@ function ClientListContainer() {
       }
     };
 
-    fetchClients();
+    getClients();
   }, []);
 
   return (
     <>
       <div className="mx-auto my-4 ">
         <div className="flex justify-between items-center mb-2 mx-2">
-          <h1 className="text-2xl font-bold ">Lista de Clientes</h1>
+          <h1 className="text-2xl font-bold text-center ">Lista de Clientes</h1>
           <Link
             to="/clients/add"
-            className="inline-block px-2 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600  "
+            className="inline-block px-2 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-700  "
           >
             Agregar Cliente
           </Link>
@@ -38,7 +38,7 @@ function ClientListContainer() {
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>RIF</th>
-                <th>Acciones</th>
+                <th> </th>
               </tr>
             </thead>
             <tbody>
@@ -50,17 +50,10 @@ function ClientListContainer() {
                   <td>{client.rif}</td>
                   <td>
                     <Link
-                      className="inline-block px-1 py-1 bg-gray-600 text-white font-semibold rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                      className="px-1 py-1 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
                       to={`/clients/${client.id}`}
                     >
-                      Detalles
-                    </Link>
-
-                    <Link
-                      className="inline-block px-1 py-1 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 ml-2"
-                      to={`/clients/${client.id}/invoices`}
-                    >
-                      Facturas
+                      ...
                     </Link>
                   </td>
                 </tr>
@@ -73,4 +66,4 @@ function ClientListContainer() {
   );
 }
 
-export default ClientListContainer;
+export default ShowClientList;

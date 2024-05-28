@@ -4,7 +4,7 @@ import iconMenu from "../assets/images/icon-menu.svg";
 import closeBtn from "../assets/images/icon-menu-close.svg";
 
 function Navbar() {
-  const [menuClicked, setMenuClicked] = useState(true);
+  const [menuClicked, setMenuClicked] = useState(false);
 
   const handleClick = () => {
     setMenuClicked((prevState) => !prevState);
@@ -13,7 +13,8 @@ function Navbar() {
   return (
     <>
       <ul
-        className={`${menuClicked ? "hidden" : ""} absolute 
+        className={`${menuClicked ? "block" : "hidden"} 
+        absolute 
         bg-blue-500 
         top-0 
         right-0 
@@ -23,54 +24,36 @@ function Navbar() {
         text-[18px] 
         sm:flex 
         sm:items-center 
-        sm:w-[438px] 
+        sm:w-auto 
         sm:place-content-around 
-        sm:p-0 sm:h-auto 
+        sm:p-0 
+        sm:h-auto 
         sm:relative 
         sm:text-[16px]`}
       >
-        <li
-          className={`${
-            menuClicked ? "hidden" : ""
-          } cursor-pointer sm:hidden  flex place-content-end`}
-        >
+        <li className="sm:hidden flex justify-end mb-8">
           <img
-            className="w-8 h-8 mb-[87px]"
+            className="w-8 h-8"
             src={closeBtn}
             onClick={handleClick}
-            alt=""
+            alt="close"
           />
         </li>
-        <li className="mb-8 sm:mb-0">
-          <Link to="/clients" className="hover:text-blue-800">
-            Clientes
-          </Link>
-        </li>
-        <li className="mb-8 sm:mb-0">
-          <Link to="#" className="hover:text-blue-800">
-            Facturas
-          </Link>
-        </li>
-        <li className="mb-8 sm:mb-0">
-          <Link to="#" className="hover:text-blue-800">
-            {" "}
-            Reportes
-          </Link>
-        </li>
-        <li className="mb-8 sm:mb-0">
-          <Link to="#" className="hover:text-blue-800">
-            Nosotros
-          </Link>
-        </li>
-        <li className="mb-8 sm:mb-0">
-          <Link to="#" className="hover:text-blue-800">
-            Contacto
-          </Link>
-        </li>
+        {["/clients", "#", "#", "#", "#"].map((path, index) => (
+          <li key={index} className="mb-4 sm:mb-0 sm:mx-2">
+            <Link to={path} className="hover:text-gray-700">
+              {
+                ["Clientes", "Facturas", "Reportes", "Nosotros", "Contacto"][
+                  index
+                ]
+              }
+            </Link>
+          </li>
+        ))}
       </ul>
       <img
         className={`${
-          menuClicked ? "" : "hidden"
+          menuClicked ? "hidden" : "block"
         } w-10 h-4 cursor-pointer sm:hidden`}
         onClick={handleClick}
         src={iconMenu}
