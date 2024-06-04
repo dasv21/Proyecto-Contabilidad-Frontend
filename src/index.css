@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.form-container {
+  @apply max-w-2xl mx-auto p-4 bg-white shadow-md rounded-lg;
+}
+
+.form-heading {
+  @apply text-2xl font-bold mb-4 text-center;
+}
+
+.form-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700;
+}
+
+.form-label {
+  @apply block;
+}
+
+.form-input {
+  @apply w-full px-2 py-1 mb-1 border rounded;
+}
+
+.button {
+  @apply px-4 py-2 bg-primary text-white font-semibold rounded hover:bg-primaryHover;
+}
+
+.box-button {
+  @apply flex justify-between mt-2;
+}

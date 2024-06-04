@@ -43,7 +43,7 @@ function EditClientForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.put(`/client/company/${id}`, client);
+      await api.put(`/client/company`, client);
       navigate(`/clients/${id}`);
     } catch (error) {
       console.log("Error updating client", error);
