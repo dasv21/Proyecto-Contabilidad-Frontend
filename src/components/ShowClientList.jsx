@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import api from "../api/api";
 import { Link } from "react-router-dom";
+import api from "../api/api";
 
 function ShowClientList() {
   const [clients, setClients] = useState([]);
@@ -11,7 +11,7 @@ function ShowClientList() {
         const response = await api.get("/client/company");
         setClients(response.data);
       } catch (error) {
-        console.log("Error Feching Clients", error);
+        console.log("Error Fetching Clients", error);
       }
     };
 
@@ -19,50 +19,66 @@ function ShowClientList() {
   }, []);
 
   return (
-    <>
-      <div className="mx-auto my-4 ">
-        <div className="flex justify-between items-center mb-2 mx-2">
-          <h1 className="text-2xl font-bold text-center ">Lista de Clientes</h1>
-          <Link
-            to="/clients/add"
-            className="inline-block px-2 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-700  "
-          >
-            Agregar Cliente
-          </Link>
-        </div>
-        <div className="overflow-x-auto">
-          <table className="min-w-full">
-            <thead className="bg-gray-700 text-white">
-              <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>RIF</th>
-                <th> </th>
-              </tr>
-            </thead>
-            <tbody>
-              {clients.map((client, i) => (
-                <tr key={client.id} className="text-center border-t">
-                  <td>{i + 1}</td>
-                  <td>{client.shortName}</td>
-                  <td>{client.email}</td>
-                  <td>{client.rif}</td>
-                  <td>
-                    <Link
-                      className="px-1 py-1 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-                      to={`/clients/${client.id}`}
-                    >
-                      ...
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+    <div className=" mx-auto p-4 bg-white shadow-md rounded-lg">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Lista de Clientes</h1>
+        <Link
+          to="/clients/add"
+          className="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600"
+        >
+          Agregar Cliente
+        </Link>
       </div>
-    </>
+      <div className="overflow-x-auto">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-600 text-white">
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium tracking-wider">
+                #
+              </th>
+              <th className="px-2 py-3 text-left text-xs font-medium tracking-wider">
+                NOMBRE
+              </th>
+              <th className="px-2 py-3 text-left text-xs font-medium tracking-wider">
+                EMAIL
+              </th>
+              <th className="px-2 py-3 text-left text-xs font-medium tracking-wider">
+                RIF
+              </th>
+              <th className="px-2 py-3 text-left text-xs font-medium tracking-wider"></th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {clients.map((client, i) => (
+              <tr key={client.id}>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-900">{i + 1}</div>
+                </td>
+                <td className="px-2 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-900">
+                    {client.shortName}
+                  </div>
+                </td>
+                <td className="px-2 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-900">{client.email}</div>
+                </td>
+                <td className="px-2 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-900">{client.rif}</div>
+                </td>
+                <td className="px-2 py-4 whitespace-nowrap">
+                  <Link
+                    to={`/clients/${client.id}`}
+                    className="px-2 py-1 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
+                  >
+                    ...
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
 
