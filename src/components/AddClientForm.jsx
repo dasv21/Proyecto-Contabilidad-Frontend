@@ -37,7 +37,7 @@ function AddClient() {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className="container" onSubmit={handleSubmit}>
       <h1 className="form-heading">Agregar Cliente</h1>
       <div className="form-grid">
         <div>
@@ -132,7 +132,7 @@ function AddClient() {
           />
         </div>
       </div>
-      <div className="box-button">
+      <div className="flex-box">
         <Link to={`/clients`} className="button">
           Volver
         </Link>

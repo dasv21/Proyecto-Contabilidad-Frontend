@@ -26,8 +26,8 @@ function ShowBuyBill() {
 
   return (
     <>
-      <div className="form-container">
-        <div className="box-button">
+      <div className="container">
+        <div className="flex-box">
           <h1 className="form-heading">Facturas de Compras</h1>
           <Link to={`/clients/${id}/buy-bill/add`} className="button-add">
             Agregar Factura
@@ -70,7 +70,7 @@ function ShowBuyBill() {
             ))}
           </tbody>
         </table>
-        <div className="box-button">
+        <div className="flex-box">
           <Link to={`/clients/${id}`} className="button">
             Volver
           </Link>

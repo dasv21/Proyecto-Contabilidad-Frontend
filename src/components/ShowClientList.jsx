@@ -19,8 +19,8 @@ function ShowClientList() {
   }, []);
 
   return (
-    <div className="form-container">
-      <div className="box-button">
+    <div className="container">
+      <div className="flex-box">
         <h1 className="form-heading">Lista de Clientes</h1>
         <Link to="/clients/add" className="button-add">
           Agregar Cliente
@@ -53,6 +53,11 @@ function ShowClientList() {
           ))}
         </tbody>
       </table>
+      <div className="flex-box">
+        <Link to={`/`} className="button">
+          Volver
+        </Link>
+      </div>
     </div>
   );
 }

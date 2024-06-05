@@ -51,7 +51,7 @@ function EditClientForm() {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className="container" onSubmit={handleSubmit}>
       <h1 className="form-heading">Editar Cliente</h1>
       <div className="form-grid">
         <div>
@@ -127,7 +127,7 @@ function EditClientForm() {
           ))}
         </div>
       </div>
-      <div className="box-button">
+      <div className="flex-box">
         <Link to={`/clients/${id}`} className="button">
           Volver
         </Link>

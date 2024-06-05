@@ -40,7 +40,7 @@ function CreateBuyBillForm() {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className="container" onSubmit={handleSubmit}>
       <h1 className="form-heading">Agregar Nueva Factura de Compra</h1>
       <div className="form-grid">
         <div>
@@ -199,7 +199,7 @@ function CreateBuyBillForm() {
           />
         </div>
       </div>
-      <div className="box-button">
+      <div className="flex-box">
         <Link to={`/clients/${id}/buy-bill`} className="button">
           Volver
         </Link>

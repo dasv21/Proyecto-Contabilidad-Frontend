@@ -35,85 +35,81 @@ function ShowBuyBillDetails() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-lg">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">
-          Factura de Compra: {bill.numBill}
-        </h1>
-        <div className="flex space-x-2">
-          <Link
-            to={`/clients/${id}/buy-bill/${billId}/edit`}
-            className="px-2 py-1 bg-gray-500 text-white font-semibold rounded hover:bg-yellow-600"
-          >
-            Editar
-          </Link>
-          <button
-            onClick={handleDelete}
-            className="px-2 py-1 bg-red-500 text-white font-semibold rounded hover:bg-red-600"
-          >
-            Eliminar
-          </button>
-        </div>
-      </div>
-      <div className="grid grid-cols-2">
-        <div>
-          <p>
-            <strong>Número de Control:</strong> {bill.numControl}
-          </p>
-          <p>
-            <strong>Proveedor:</strong> {bill.nameProvider}
-          </p>
-          <p>
-            <strong>RIF del Proveedor:</strong> {bill.rifProvider}
-          </p>
-          <p>
-            <strong>Fecha de Creación:</strong>{" "}
-            {new Date(bill.dateCreatedOn).toLocaleDateString()}
-          </p>
-          <p>
-            <strong>Fecha de Aplicación:</strong>{" "}
-            {new Date(bill.dateApplicationOn).toLocaleDateString()}
-          </p>
-          <p>
-            <strong>Creado en:</strong>{" "}
-            {new Date(bill.createOn).toLocaleString()}
-          </p>
-          <p>
-            <strong>Actualizado en:</strong>{" "}
-            {new Date(bill.updateOn).toLocaleString()}
-          </p>
-        </div>
-        <div>
-          <p>
-            <strong>Tipo de Transacción:</strong> {bill.transactionType}
-          </p>
-          <p>
-            <strong>Monto Exento:</strong> {bill.exemptAmount}
-          </p>
-          <p>
-            <strong>Monto IVA:</strong> {bill.ivaAmount}
-          </p>
-          <p>
-            <strong>Total de Compra:</strong> {bill.totalBuy}
-          </p>
-          <p>
-            <strong>Impuesto Especial:</strong> {bill.taxEspecial}
-          </p>
-          <p>
-            <strong>Tipo de Compra:</strong> {bill.buyType}
-          </p>
-        </div>
-        <div className="mb-4 col-span-2">
-          <strong>Observación:</strong> {bill.observation}
-        </div>
-      </div>
-      <div className="flex justify-end mt-2">
+    <div className="container">
+      <div className="flex-box">
+        <h1 className="form-heading">Factura de Compra: {bill.numBill}</h1>
         <Link
-          to={`/clients/${id}/buy-bill`}
-          className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
+          to={`/clients/${id}/buy-bill/${billId}/edit`}
+          className="button-edit"
         >
+          Editar
+        </Link>
+      </div>
+      <div className="form-grid">
+        <div>
+          <strong>Número de Control:</strong>
+          {bill.numControl}
+        </div>
+        <div>
+          <strong>Proveedor:</strong>
+          {bill.nameProvider}
+        </div>
+        <div>
+          <strong>RIF del Proveedor:</strong>
+          {bill.rifProvider}
+        </div>
+        <div>
+          <strong>Fecha de Creación:</strong>
+          {new Date(bill.dateCreatedOn).toLocaleDateString()}
+        </div>
+        <div>
+          <strong>Fecha de Aplicación:</strong>
+          {new Date(bill.dateApplicationOn).toLocaleDateString()}
+        </div>
+        <div>
+          <strong>Creado en:</strong>
+          {new Date(bill.createOn).toLocaleString()}
+        </div>
+        <div>
+          <strong>Actualizado en:</strong>
+          {new Date(bill.updateOn).toLocaleString()}
+        </div>
+        <div>
+          <strong>Tipo de Transacción:</strong>
+          {bill.transactionType}
+        </div>
+        <div>
+          <strong>Monto Exento:</strong>
+          {bill.exemptAmount}
+        </div>
+        <div>
+          <strong>Monto IVA:</strong>
+          {bill.ivaAmount}
+        </div>
+        <div>
+          <strong>Total de Compra:</strong>
+          {bill.totalBuy}
+        </div>
+        <div>
+          <strong>Impuesto Especial:</strong>
+          {bill.taxEspecial}
+        </div>
+        <div>
+          <strong>Tipo de Compra:</strong>
+          {bill.buyType}
+        </div>
+        <div>
+          <strong>Observación:</strong>
+          {bill.observation}
+        </div>
+      </div>
+      <div className="flex-box">
+        <Link to={`/clients/${id}/buy-bill`} className="button">
           Volver
         </Link>
+        <button onClick={handleDelete} className="button-delete">
+          Eliminar
+        </button>
       </div>
     </div>
   );

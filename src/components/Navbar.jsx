@@ -21,14 +21,10 @@ function Navbar() {
             alt="close"
           />
         </li>
-        {["/clients", "#", "#", "#", "#"].map((path, index) => (
+        {["/clients", "#", "#"].map((path, index) => (
           <li key={index} className="navbar-item">
             <Link to={path} className="navbar-link">
-              {
-                ["Clientes", "Facturas", "Reportes", "Nosotros", "Contacto"][
-                  index
-                ]
-              }
+              {["Clientes", "Contadores", "Reportes"][index]}
             </Link>
           </li>
         ))}

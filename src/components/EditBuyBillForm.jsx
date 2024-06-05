@@ -51,7 +51,7 @@ function EditBuyBillForm() {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className="container" onSubmit={handleSubmit}>
       <h1 className="form-heading">Editar Factura de Compra</h1>
       <div className="form-grid">
         <div>
@@ -185,7 +185,7 @@ function EditBuyBillForm() {
           />
         </div>
       </div>
-      <div className="box-button">
+      <div className="flex-box">
         <Link to={`/clients/${id}/buy-bill`} className="button">
           Volver
         </Link>
