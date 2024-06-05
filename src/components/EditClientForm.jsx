@@ -117,15 +117,13 @@ function EditClientForm() {
         <div>
           <label className="form-label">Teléfonos</label>
           {client.phones.map((phone, index) => (
-            <>
-              <input
-                key={index}
-                type="text"
-                value={phone}
-                onChange={(e) => handlePhoneChange(index, e.target.value)}
-                className="form-input"
-              />
-            </>
+            <input
+              key={index}
+              type="text"
+              value={phone}
+              onChange={(e) => handlePhoneChange(index, e.target.value)}
+              className="form-input"
+            />
           ))}
         </div>
       </div>
