@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import api from "../api/api";
 
 function EditClientForm() {
@@ -51,89 +51,92 @@ function EditClientForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-lg"
-    >
-      <h1 className="text-2xl text-center font-bold mb-4">Editar Cliente</h1>
-      <div className="mb-4">
-        <label className="block text-gray-700">RIF</label>
-        <input
-          type="text"
-          name="rif"
-          value={client.rif}
-          onChange={handleInputChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700">Nombre Corto</label>
-        <input
-          type="text"
-          name="shortName"
-          value={client.shortName}
-          onChange={handleInputChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700">Nombre Legal</label>
-        <input
-          type="text"
-          name="legalName"
-          value={client.legalName}
-          onChange={handleInputChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700">Email</label>
-        <input
-          type="email"
-          name="email"
-          value={client.email}
-          onChange={handleInputChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700">Teléfonos</label>
-        {client.phones.map((phone, index) => (
+    <form className="form-container" onSubmit={handleSubmit}>
+      <h1 className="form-heading">Editar Cliente</h1>
+      <div className="form-grid">
+        <div>
+          <label className="form-label">RIF</label>
           <input
-            key={index}
             type="text"
-            value={phone}
-            onChange={(e) => handlePhoneChange(index, e.target.value)}
-            className="w-full p-2 mb-2 border border-gray-300 rounded"
+            name="rif"
+            value={client.rif}
+            onChange={handleInputChange}
+            className="form-input"
           />
-        ))}
+        </div>
+        <div>
+          <label className="form-label">Nombre Corto</label>
+          <input
+            type="text"
+            name="shortName"
+            value={client.shortName}
+            onChange={handleInputChange}
+            className="form-input"
+          />
+        </div>
+        <div>
+          <label className="form-label">Nombre Legal</label>
+          <input
+            type="text"
+            name="legalName"
+            value={client.legalName}
+            onChange={handleInputChange}
+            className="form-input"
+          />
+        </div>
+        <div>
+          <label className="form-label">Email</label>
+          <input
+            type="email"
+            name="email"
+            value={client.email}
+            onChange={handleInputChange}
+            className="form-input"
+          />
+        </div>
+        <div>
+          <label className="form-label">Dirección</label>
+          <input
+            type="text"
+            name="address"
+            value={client.address}
+            onChange={handleInputChange}
+            className="form-input"
+          />
+        </div>
+        <div>
+          <label className="form-label">Contador</label>
+          <input
+            type="text"
+            name="accountant"
+            value={client.accountant}
+            onChange={handleInputChange}
+            className="form-input"
+          />
+        </div>
+        <div>
+          <label className="form-label">Teléfonos</label>
+          {client.phones.map((phone, index) => (
+            <>
+              <input
+                key={index}
+                type="text"
+                value={phone}
+                onChange={(e) => handlePhoneChange(index, e.target.value)}
+                className="form-input"
+              />
+            </>
+          ))}
+        </div>
       </div>
-      <div className="mb-4">
-        <label className="block text-gray-700">Dirección</label>
-        <input
-          type="text"
-          name="address"
-          value={client.address}
-          onChange={handleInputChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
+      <div className="box-button">
+        <Link to={`/clients/${id}`} className="button">
+          Volver
+        </Link>
+        <button type="submit" className="button">
+          Guardar Cambios
+        </button>
       </div>
-      <div className="mb-4">
-        <label className="block text-gray-700">Contador</label>
-        <input
-          type="text"
-          name="accountant"
-          value={client.accountant}
-          onChange={handleInputChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-      <button
-        type="submit"
-        className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
-      >
-        Guardar Cambios
-      </button>
     </form>
   );
 }

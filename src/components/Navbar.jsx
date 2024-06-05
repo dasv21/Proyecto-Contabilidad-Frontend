@@ -12,36 +12,18 @@ function Navbar() {
 
   return (
     <>
-      <ul
-        className={`${menuClicked ? "block" : "hidden"} 
-        absolute 
-        bg-blue-500 
-        top-0 
-        right-0 
-        w-[256px] 
-        p-[24px] 
-        h-full 
-        text-[18px] 
-        sm:flex 
-        sm:items-center 
-        sm:w-auto 
-        sm:place-content-around 
-        sm:p-0 
-        sm:h-auto 
-        sm:relative 
-        sm:text-[16px]`}
-      >
-        <li className="sm:hidden flex justify-end mb-8">
+      <ul className={`${menuClicked ? "block" : "hidden"} navbar-menu`}>
+        <li className="navbar-close">
           <img
-            className="w-8 h-8"
+            className="w-8 h-8 cursor-pointer"
             src={closeBtn}
             onClick={handleClick}
             alt="close"
           />
         </li>
         {["/clients", "#", "#", "#", "#"].map((path, index) => (
-          <li key={index} className="mb-4 sm:mb-0 sm:mx-2">
-            <Link to={path} className="hover:text-gray-700">
+          <li key={index} className="navbar-item">
+            <Link to={path} className="navbar-link">
               {
                 ["Clientes", "Facturas", "Reportes", "Nosotros", "Contacto"][
                   index
