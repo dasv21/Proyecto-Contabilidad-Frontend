@@ -26,65 +26,42 @@ function ShowBuyBill() {
 
   return (
     <>
-      <div className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-lg">
-        <div className="mb-4">
-          <h1 className="text-2xl font-bold">Facturas de Compras</h1>
-          <p>
-            <strong>Nombre Legal:</strong> {clientDetails.companyLegalName}
-          </p>
-          <p>
-            <strong>RIF:</strong> {clientDetails.companyRif}
-          </p>
-          <p>
-            <Link
-              to={`/clients/${id}/buy-bill/add`}
-              className="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600"
-            >
-              Agregar Factura
-            </Link>
-          </p>
+      <div className="form-container">
+        <div className="box-button">
+          <h1 className="form-heading">Facturas de Compras</h1>
+          <Link to={`/clients/${id}/buy-bill/add`} className="button-add">
+            Agregar Factura
+          </Link>
         </div>
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-600 text-white">
+        <p>
+          <strong>Nombre Legal:</strong> {clientDetails.companyLegalName}
+        </p>
+        <p>
+          <strong>RIF:</strong> {clientDetails.companyRif}
+        </p>
+        <table className="table">
+          <thead className="table-head">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                Num. Factura
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                Num. Control
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                Proveedor
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                RIF Proveedor
-              </th>
-              <th className="px-2 py-3 text-left text-xs font-medium tracking-wider"></th>
+              <th className="table-th">#</th>
+              <th className="table-th">N° FACTURA</th>
+              <th className="table-th">N° CONTROL</th>
+              <th className="table-th">PROVEEDOR</th>
+              <th className="table-th">RIF PROVEEDOR</th>
+              <th className="table-th"></th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {buyBills.map((bill) => (
+          <tbody className="table-body">
+            {buyBills.map((bill, i) => (
               <tr key={bill.id}>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900">{bill.numBill}</div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900">{bill.numControl}</div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900">
-                    {bill.nameProvider}
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900">
-                    {bill.rifProvider}
-                  </div>
-                </td>
-                <td className="px-2 py-4 whitespace-nowrap">
+                <td className="table-td">{i + 1}</td>
+                <td className="table-td">{bill.numBill}</td>
+                <td className="table-td">{bill.numControl}</td>
+                <td className="table-td">{bill.nameProvider}</td>
+                <td className="table-td">{bill.rifProvider}</td>
+                <td className="table-td">
                   <Link
                     to={`/clients/${id}/buy-bill/${bill.id}`}
-                    className="px-2 py-1 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
+                    className="button-more"
                   >
                     ...
                   </Link>
@@ -93,11 +70,8 @@ function ShowBuyBill() {
             ))}
           </tbody>
         </table>
-        <div className="mt-4">
-          <Link
-            to={`/clients/${id}`}
-            className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
-          >
+        <div className="box-button">
+          <Link to={`/clients/${id}`} className="button">
             Volver
           </Link>
         </div>

@@ -19,39 +19,33 @@ function ShowClientList() {
   }, []);
 
   return (
-    <div className="mx-auto p-2 bg-white shadow-md text-gray-700">
-      <div className="flex justify-between items-center mb-2">
-        <h1 className="text-2xl font-bold">Lista de Clientes</h1>
-        <Link
-          to="/clients/add"
-          className="px-2 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600"
-        >
+    <div className="form-container">
+      <div className="box-button">
+        <h1 className="form-heading">Lista de Clientes</h1>
+        <Link to="/clients/add" className="button-add">
           Agregar Cliente
         </Link>
       </div>
 
-      <table className=" min-w-full divide-y divide-gray-200">
-        <thead className=" bg-gray-600 text-white">
+      <table className="table">
+        <thead className="table-head">
           <tr>
-            <th className="px-2 py-2 text-left text-xs font-medium">#</th>
-            <th className="px-2 py-2 text-left text-xs font-medium">NOMBRE</th>
-            <th className="px-2 py-2 text-left text-xs font-medium">EMAIL</th>
-            <th className="px-2 py-2 text-left text-xs font-medium">RIF</th>
-            <th className="px-2 py-2 text-left text-xs font-medium"></th>
+            <th className="table-th">#</th>
+            <th className="table-th">NOMBRE</th>
+            <th className="table-th">EMAIL</th>
+            <th className="table-th">RIF</th>
+            <th className="table-th"></th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200 text-gray-700">
+        <tbody className="table-body">
           {clients.map((client, i) => (
             <tr key={client.id}>
-              <td className="px-2 py-2">{i + 1}</td>
-              <td className="px-2 py-2">{client.shortName}</td>
-              <td className="px-2 py-2">{client.email}</td>
-              <td className="px-2 py-2">{client.rif}</td>
-              <td className="px-2 py-2">
-                <Link
-                  to={`/clients/${client.id}`}
-                  className="px-2 py-1 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
-                >
+              <td className="table-td">{i + 1}</td>
+              <td className="table-td">{client.shortName}</td>
+              <td className="table-td">{client.email}</td>
+              <td className="table-td">{client.rif}</td>
+              <td className="table-td">
+                <Link to={`/clients/${client.id}`} className="button-more">
                   ...
                 </Link>
               </td>
