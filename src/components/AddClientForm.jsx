@@ -30,7 +30,7 @@ function AddClient() {
     e.preventDefault();
     try {
       await api.post("/client/company", formData);
-      navigate("/clients");
+      navigate("/client");
     } catch (error) {
       console.log("Error creating client", error);
     }
@@ -134,7 +134,7 @@ function AddClient() {
         </div>
       </div>
       <div className="flex-box">
-        <Link to={`/clients`} className="button">
+        <Link to={`/client`} className="button">
           Volver
         </Link>
         <button type="submit" className="button">

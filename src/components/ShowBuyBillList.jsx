@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from "../api/api";
 
-function ShowBuyBill() {
-  const [buyBills, setBuyBills] = useState([]);
+function ShowBuyBillList() {
+  const [bills, setBills] = useState([]);
   const [clientDetails, setClientDetails] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
-    const getBuyBills = async () => {
+    const getBills = async () => {
       try {
         const response = await api.get(`/client/company/buy-bill/${id}`);
-        setBuyBills(response.data.buyBillDTOList);
+        setBills(response.data.buyBillDTOList);
         setClientDetails({
           companyLegalName: response.data.companyLegalName,
           companyRif: response.data.companyRif,
@@ -21,7 +21,7 @@ function ShowBuyBill() {
       }
     };
 
-    getBuyBills();
+    getBills();
   }, [id]);
 
   return (
@@ -29,7 +29,7 @@ function ShowBuyBill() {
       <div className="container">
         <div className="flex-box">
           <h1 className="heading">Facturas de Compras</h1>
-          <Link to={`/clients/${id}/buy-bill/add`} className="button-add">
+          <Link to={`/client/${id}/buy-bill/add`} className="button-add">
             Agregar Factura
           </Link>
         </div>
@@ -51,7 +51,7 @@ function ShowBuyBill() {
             </tr>
           </thead>
           <tbody className="table-body">
-            {buyBills.map((bill, i) => (
+            {bills.map((bill, i) => (
               <tr key={bill.id}>
                 <td className="table-td">{i + 1}</td>
                 <td className="table-td">{bill.numBill}</td>
@@ -60,7 +60,7 @@ function ShowBuyBill() {
                 <td className="table-td">{bill.rifProvider}</td>
                 <td className="table-td">
                   <Link
-                    to={`/clients/${id}/buy-bill/${bill.id}`}
+                    to={`/client/${id}/buy-bill/${bill.id}`}
                     className="button-more"
                   >
                     ...
@@ -71,7 +71,7 @@ function ShowBuyBill() {
           </tbody>
         </table>
         <div className="flex-box">
-          <Link to={`/clients/${id}`} className="button">
+          <Link to={`/client/${id}`} className="button">
             Volver
           </Link>
         </div>
@@ -80,4 +80,4 @@ function ShowBuyBill() {
   );
 }
 
-export default ShowBuyBill;
+export default ShowBuyBillList;

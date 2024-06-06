@@ -27,7 +27,7 @@ function ShowBuyBillDetails() {
     if (confirmed) {
       try {
         await api.delete(`/bill/buy-bill/${billId}`);
-        navigate(`/clients/${id}/buy-bill`);
+        navigate(`/client/${id}/buy-bill`);
       } catch (error) {
         console.log("Error deleting bill", error);
       }
@@ -39,7 +39,7 @@ function ShowBuyBillDetails() {
       <div className="flex-box">
         <h1 className="form-heading">Factura de Compra: {bill.numBill}</h1>
         <Link
-          to={`/clients/${id}/buy-bill/${billId}/edit`}
+          to={`/client/${id}/buy-bill/${billId}/edit`}
           className="button-edit"
         >
           Editar
@@ -104,7 +104,7 @@ function ShowBuyBillDetails() {
         </div>
       </div>
       <div className="flex-box">
-        <Link to={`/clients/${id}/buy-bill`} className="button">
+        <Link to={`/client/${id}/buy-bill`} className="button">
           Volver
         </Link>
         <button onClick={handleDelete} className="button-delete">

@@ -22,7 +22,7 @@ function ShowClientList() {
     <div className="container">
       <div className="flex-box">
         <h1 className="heading">Lista de Clientes</h1>
-        <Link to="/clients/add" className="button-add">
+        <Link to="/client/add" className="button-add">
           Agregar Cliente
         </Link>
       </div>
@@ -45,7 +45,7 @@ function ShowClientList() {
               <td className="table-td">{client.email}</td>
               <td className="table-td">{client.rif}</td>
               <td className="table-td">
-                <Link to={`/clients/${client.id}`} className="button-more">
+                <Link to={`/client/${client.id}`} className="button-more">
                   ...
                 </Link>
               </td>

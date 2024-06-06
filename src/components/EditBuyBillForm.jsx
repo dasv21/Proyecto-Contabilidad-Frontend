@@ -44,7 +44,7 @@ function EditBuyBillForm() {
     e.preventDefault();
     try {
       await api.put(`/bill/buy-bill`, bill);
-      navigate(`/clients/${id}/buy-bill/${billId}`);
+      navigate(`/client/${id}/buy-bill/${billId}`);
     } catch (error) {
       console.log("Error updating bill", error);
     }
@@ -186,7 +186,7 @@ function EditBuyBillForm() {
         </div>
       </div>
       <div className="flex-box">
-        <Link to={`/clients/${id}/buy-bill`} className="button">
+        <Link to={`/client/${id}/buy-bill`} className="button">
           Volver
         </Link>
         <button type="submit" className="button">

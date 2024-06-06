@@ -27,7 +27,7 @@ function ShowClientDetails() {
     if (confirmed) {
       try {
         await api.delete(`/client/company/${id}`);
-        navigate("/clients");
+        navigate("/client");
       } catch (error) {
         console.log("Error deleting client", error);
       }
@@ -38,7 +38,7 @@ function ShowClientDetails() {
     <div className="container">
       <div className="flex-box">
         <h1 className="heading">{client.shortName}</h1>
-        <Link to={`/clients/${id}/edit`} className="button-edit">
+        <Link to={`/client/${id}/edit`} className="button-edit">
           Editar
         </Link>
       </div>
@@ -81,13 +81,13 @@ function ShowClientDetails() {
         </div>
       </div>
       <div className="flex-box">
-        <Link to={`/clients`} className="button">
+        <Link to={`/client`} className="button">
           Volver
         </Link>
-        <Link to={`/clients/${id}/buy-bill`} className="button">
+        <Link to={`/client/${id}/buy-bill`} className="button">
           Facturas de Compras
         </Link>
-        <Link to={`/clients/${id}/sales-bill`} className="button">
+        <Link to={`/client/${id}/sale-bill`} className="button">
           Facturas de Ventas
         </Link>
         <button onClick={handleDelete} className="button-delete">

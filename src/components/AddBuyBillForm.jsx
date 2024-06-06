@@ -32,7 +32,7 @@ function CreateBuyBillForm() {
     try {
       await api.post("/bill/buy-bill", formData);
       alert("Factura creada exitosamente");
-      navigate(`/clients/${id}/buy-bill`);
+      navigate(`/client/${id}/buy-bill`);
     } catch (error) {
       console.error("Error creando factura", error);
       alert("Hubo un error al crear la factura");
@@ -200,7 +200,7 @@ function CreateBuyBillForm() {
         </div>
       </div>
       <div className="flex-box">
-        <Link to={`/clients/${id}/buy-bill`} className="button">
+        <Link to={`/client/${id}/buy-bill`} className="button">
           Volver
         </Link>
         <button type="submit" className="button">

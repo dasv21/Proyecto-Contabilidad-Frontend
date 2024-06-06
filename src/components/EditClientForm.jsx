@@ -44,7 +44,7 @@ function EditClientForm() {
     e.preventDefault();
     try {
       await api.put(`/client/company`, client);
-      navigate(`/clients/${id}`);
+      navigate(`/client/${id}`);
     } catch (error) {
       console.log("Error updating client", error);
     }
@@ -128,7 +128,7 @@ function EditClientForm() {
         </div>
       </div>
       <div className="flex-box">
-        <Link to={`/clients/${id}`} className="button">
+        <Link to={`/client/${id}`} className="button">
           Volver
         </Link>
         <button type="submit" className="button">
