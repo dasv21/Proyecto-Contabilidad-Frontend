@@ -10,6 +10,7 @@ import ShowSaleBillList from "./components/ShowSaleBillList";
 import AddBuyBillForm from "./components/AddBuyBillForm";
 import ShowBuyBillDetails from "./components/ShowBuyBillDetails";
 import EditBuyBillForm from "./components/EditBuyBillForm";
+import ShowSaleBillDetails from "./components/ShowSaleBillDetails";
 
 function App() {
   return (
@@ -17,12 +18,16 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+
         {/** Routes clients */}
+
         <Route path="/client" element={<ShowClientList />} />
         <Route path="/client/add" element={<AddClientForm />} />
         <Route path="/client/:id/edit" element={<EditClientForm />} />
         <Route path="/client/:id" element={<ShowClientDetails />} />
+
         {/** Routes buy-bill */}
+
         <Route path="/client/:id/buy-bill" element={<ShowBuyBillList />} />
         <Route
           path="/client/:id/buy-bill/:billId"
@@ -33,8 +38,14 @@ function App() {
           element={<EditBuyBillForm />}
         />
         <Route path="/client/:id/buy-bill/add" element={<AddBuyBillForm />} />
+
         {/** Routes sale-bill */}
+
         <Route path="/client/:id/sale-bill" element={<ShowSaleBillList />} />
+        <Route
+          path="/client/:id/sale-bill/:billId"
+          element={<ShowSaleBillDetails />}
+        />
       </Routes>
     </Router>
   );

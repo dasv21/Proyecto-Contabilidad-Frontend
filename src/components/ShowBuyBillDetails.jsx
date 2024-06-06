@@ -37,7 +37,7 @@ function ShowBuyBillDetails() {
   return (
     <div className="container">
       <div className="flex-box">
-        <h1 className="form-heading">Factura de Compra: {bill.numBill}</h1>
+        <h1 className="heading">Factura de Compra: {bill.numBill}</h1>
         <Link
           to={`/client/${id}/buy-bill/${billId}/edit`}
           className="button-edit"
@@ -47,55 +47,55 @@ function ShowBuyBillDetails() {
       </div>
       <div className="grid-box">
         <div>
-          <strong>Número de Control:</strong>
+          <strong>Número de Control: </strong>
           {bill.numControl}
         </div>
         <div>
-          <strong>Proveedor:</strong>
+          <strong>Proveedor: </strong>
           {bill.nameProvider}
         </div>
         <div>
-          <strong>RIF del Proveedor:</strong>
+          <strong>RIF del Proveedor: </strong>
           {bill.rifProvider}
         </div>
         <div>
-          <strong>Fecha de Creación:</strong>
+          <strong>Fecha de Creación: </strong>
           {new Date(bill.dateCreatedOn).toLocaleDateString()}
         </div>
         <div>
-          <strong>Fecha de Aplicación:</strong>
+          <strong>Fecha de Aplicación: </strong>
           {new Date(bill.dateApplicationOn).toLocaleDateString()}
         </div>
         <div>
-          <strong>Creado en:</strong>
+          <strong>Creado en: </strong>
           {new Date(bill.createOn).toLocaleString()}
         </div>
         <div>
-          <strong>Actualizado en:</strong>
+          <strong>Actualizado en: </strong>
           {new Date(bill.updateOn).toLocaleString()}
         </div>
         <div>
-          <strong>Tipo de Transacción:</strong>
+          <strong>Tipo de Transacción: </strong>
           {bill.transactionType}
         </div>
         <div>
-          <strong>Monto Exento:</strong>
+          <strong>Monto Exento: </strong>
           {bill.exemptAmount}
         </div>
         <div>
-          <strong>Monto IVA:</strong>
+          <strong>Monto IVA: </strong>
           {bill.ivaAmount}
         </div>
         <div>
-          <strong>Total de Compra:</strong>
+          <strong>Total de Compra: </strong>
           {bill.totalBuy}
         </div>
         <div>
-          <strong>Impuesto Especial:</strong>
+          <strong>Impuesto Especial: </strong>
           {bill.taxEspecial}
         </div>
         <div>
-          <strong>Tipo de Compra:</strong>
+          <strong>Tipo de Compra: </strong>
           {bill.buyType}
         </div>
         <div>

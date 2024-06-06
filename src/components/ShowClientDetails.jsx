@@ -44,25 +44,25 @@ function ShowClientDetails() {
       </div>
       <div className="grid-box">
         <div>
-          <strong>Nombre Legal:</strong> {client.legalName}
+          <strong>Nombre Legal: </strong> {client.legalName}
         </div>
         <div>
-          <strong>RIF:</strong> {client.rif}
+          <strong>RIF: </strong> {client.rif}
         </div>
         <div>
-          <strong>Email:</strong>{" "}
+          <strong>Email: </strong>{" "}
           <a href={`mailto:${client.email}`} className="text-blue-500">
             {client.email}
           </a>
         </div>
         <div>
-          <strong>Contador:</strong> {client.accountant}
+          <strong>Contador: </strong> {client.accountant}
         </div>
         <div>
-          <strong>Dirección:</strong> {client.address}
+          <strong>Dirección: </strong> {client.address}
         </div>
         <div>
-          <strong>Teléfonos:</strong>
+          <strong>Teléfonos: </strong>
 
           {Array.isArray(client.phones) && client.phones.length > 0 ? (
             client.phones.map((phone, index) => <a key={index}> {phone} </a>)
@@ -72,11 +72,11 @@ function ShowClientDetails() {
         </div>
 
         <div>
-          <strong>Creado en:</strong>{" "}
+          <strong>Creado en: </strong>{" "}
           {new Date(client.createOn).toLocaleString()}
         </div>
         <div>
-          <strong>Actualizado en:</strong>{" "}
+          <strong>Actualizado en: </strong>{" "}
           {new Date(client.updateOn).toLocaleString()}
         </div>
       </div>

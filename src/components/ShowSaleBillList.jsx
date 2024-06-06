@@ -28,7 +28,7 @@ function ShowSaleBillList() {
     <>
       <div className="container">
         <div className="flex-box">
-          <h1 className="heading">Facturas de Compras</h1>
+          <h1 className="heading">Facturas de Ventas</h1>
           <Link to={`/client/${id}/sale-bill/add`} className="button-add">
             Agregar Factura
           </Link>
@@ -60,7 +60,7 @@ function ShowSaleBillList() {
                 <td className="table-td">{bill.rifConsumer}</td>
                 <td className="table-td">
                   <Link
-                    to={`/client/${id}/buy-bill/${bill.id}`}
+                    to={`/client/${id}/sale-bill/${bill.id}`}
                     className="button-more"
                   >
                     ...
