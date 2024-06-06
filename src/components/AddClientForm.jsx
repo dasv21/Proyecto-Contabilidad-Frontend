@@ -38,34 +38,35 @@ function AddClient() {
 
   return (
     <form className="container" onSubmit={handleSubmit}>
-      <h1 className="form-heading">Agregar Cliente</h1>
-      <div className="form-grid">
+      <h1 className="heading">Agregar Cliente</h1>
+
+      <div className="grid-box">
         <div>
-          <label className="form-label">RIF</label>
+          <strong>RIF</strong>
           <input
             type="text"
             name="rif"
             placeholder="RIF"
             value={formData.rif}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Nombre Corto</label>
+          <strong>Nombre Corto</strong>
           <input
             type="text"
             name="shortName"
             placeholder="Nombre Corto"
             value={formData.shortName}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Nombre Legal</label>
+          <strong>Nombre Legal</strong>
 
           <input
             type="text"
@@ -73,54 +74,54 @@ function AddClient() {
             placeholder="Nombre Legal"
             value={formData.legalName}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Email</label>
+          <strong>Email</strong>
           <input
             type="email"
             name="email"
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Dirección</label>
+          <strong>Dirección</strong>
           <input
             type="text"
             name="address"
             placeholder="Dirección"
             value={formData.address}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Contador</label>
+          <strong>Contador</strong>
           <input
             type="text"
             name="accountant"
             placeholder="Contador Encargado"
             value={formData.accountant}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Teléfonos</label>
+          <strong>Teléfonos</strong>
           <input
             type="text"
             placeholder="Principal"
             value={formData.phones[0]}
             onChange={(e) => handlePhoneChange(0, e.target.value)}
-            className="form-input"
+            className="input"
             required
           />
           <input
@@ -128,7 +129,7 @@ function AddClient() {
             value={formData.phones[1]}
             placeholder="Secundario"
             onChange={(e) => handlePhoneChange(1, e.target.value)}
-            className="form-input"
+            className="input"
           />
         </div>
       </div>

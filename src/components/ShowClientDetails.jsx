@@ -37,12 +37,12 @@ function ShowClientDetails() {
   return (
     <div className="container">
       <div className="flex-box">
-        <h1 className="form-heading">{client.shortName}</h1>
+        <h1 className="heading">{client.shortName}</h1>
         <Link to={`/clients/${id}/edit`} className="button-edit">
           Editar
         </Link>
       </div>
-      <div className="form-grid">
+      <div className="grid-box">
         <div>
           <strong>Nombre Legal:</strong> {client.legalName}
         </div>

@@ -52,77 +52,77 @@ function EditClientForm() {
 
   return (
     <form className="container" onSubmit={handleSubmit}>
-      <h1 className="form-heading">Editar Cliente</h1>
-      <div className="form-grid">
+      <h1 className="heading">Editar Cliente</h1>
+      <div className="grid-box">
         <div>
-          <label className="form-label">RIF</label>
+          <strong>RIF</strong>
           <input
             type="text"
             name="rif"
             value={client.rif}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Nombre Corto</label>
+          <strong>Nombre Corto</strong>
           <input
             type="text"
             name="shortName"
             value={client.shortName}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Nombre Legal</label>
+          <strong>Nombre Legal</strong>
           <input
             type="text"
             name="legalName"
             value={client.legalName}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Email</label>
+          <strong>Email</strong>
           <input
             type="email"
             name="email"
             value={client.email}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Dirección</label>
+          <strong>Dirección</strong>
           <input
             type="text"
             name="address"
             value={client.address}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Contador</label>
+          <strong>Contador</strong>
           <input
             type="text"
             name="accountant"
             value={client.accountant}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Teléfonos</label>
+          <strong>Teléfonos</strong>
           {client.phones.map((phone, index) => (
             <input
               key={index}
               type="text"
               value={phone}
               onChange={(e) => handlePhoneChange(index, e.target.value)}
-              className="form-input"
+              className="input"
             />
           ))}
         </div>

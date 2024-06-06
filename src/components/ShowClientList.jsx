@@ -21,7 +21,7 @@ function ShowClientList() {
   return (
     <div className="container">
       <div className="flex-box">
-        <h1 className="form-heading">Lista de Clientes</h1>
+        <h1 className="heading">Lista de Clientes</h1>
         <Link to="/clients/add" className="button-add">
           Agregar Cliente
         </Link>

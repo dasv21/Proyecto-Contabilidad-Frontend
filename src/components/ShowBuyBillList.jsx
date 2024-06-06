@@ -28,7 +28,7 @@ function ShowBuyBill() {
     <>
       <div className="container">
         <div className="flex-box">
-          <h1 className="form-heading">Facturas de Compras</h1>
+          <h1 className="heading">Facturas de Compras</h1>
           <Link to={`/clients/${id}/buy-bill/add`} className="button-add">
             Agregar Factura
           </Link>

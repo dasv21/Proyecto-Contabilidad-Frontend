@@ -41,161 +41,161 @@ function CreateBuyBillForm() {
 
   return (
     <form className="container" onSubmit={handleSubmit}>
-      <h1 className="form-heading">Agregar Nueva Factura de Compra</h1>
-      <div className="form-grid">
+      <h1 className="heading">Agregar Nueva Factura de Compra</h1>
+      <div className="grid-box">
         <div>
-          <label className="form-label">Número de Factura</label>
+          <strong>Número de Factura</strong>
           <input
             type="text"
             name="numBill"
             placeholder="Número de Factura"
             value={formData.numBill}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Número de Control</label>
+          <strong>Número de Control</strong>
           <input
             type="text"
             name="numControl"
             placeholder="Número de Control"
             value={formData.numControl}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Nombre del Proveedor</label>
+          <strong>Nombre del Proveedor</strong>
           <input
             type="text"
             name="nameProvider"
             placeholder="Nombre del Proveedor"
             value={formData.nameProvider}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">RIF del Proveedor</label>
+          <strong>RIF del Proveedor</strong>
           <input
             type="text"
             name="rifProvider"
             placeholder="RIF del Proveedor"
             value={formData.rifProvider}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Fecha de Creación</label>
+          <strong>Fecha de Creación</strong>
           <input
             type="date"
             name="dateCreatedOn"
             placeholder="Fecha de Creación"
             value={formData.dateCreatedOn}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Fecha de Aplicación</label>
+          <strong>Fecha de Aplicación</strong>
           <input
             type="date"
             name="dateApplicationOn"
             placeholder="Fecha de Aplicación"
             value={formData.dateApplicationOn}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Tipo de Compra</label>
+          <strong>Tipo de Compra</strong>
           <input
             type="text"
             name="buyType"
             placeholder="Tipo de Compra"
             value={formData.buyType}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Tipo de Transacción</label>
+          <strong>Tipo de Transacción</strong>
           <input
             type="text"
             name="transactionType"
             placeholder="Tipo de Transacción"
             value={formData.transactionType}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Monto Exento</label>
+          <strong>Monto Exento</strong>
           <input
             type="number"
             name="exemptAmount"
             placeholder="Monto Exento"
             value={formData.exemptAmount}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Monto IVA</label>
+          <strong>Monto IVA</strong>
           <input
             type="number"
             name="ivaAmount"
             placeholder="Monto IVA"
             value={formData.ivaAmount}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Total de Compra</label>
+          <strong>Total de Compra</strong>
           <input
             type="number"
             name="totalBuy"
             placeholder="Total de Compra"
             value={formData.totalBuy}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Impuesto Especial</label>
+          <strong>Impuesto Especial</strong>
           <input
             type="number"
             name="taxEspecial"
             placeholder="Impuesto Especial"
             value={formData.taxEspecial}
             onChange={handleChange}
-            className="form-input"
+            className="input"
             required
           />
         </div>
         <div>
-          <label className="form-label">Observación</label>
+          <strong>Observación</strong>
           <input
             type="text"
             name="observation"
             placeholder="Observación"
             value={formData.observation}
             onChange={handleChange}
-            className="form-input"
+            className="input"
           />
         </div>
       </div>

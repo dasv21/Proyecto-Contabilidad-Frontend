@@ -52,136 +52,136 @@ function EditBuyBillForm() {
 
   return (
     <form className="container" onSubmit={handleSubmit}>
-      <h1 className="form-heading">Editar Factura de Compra</h1>
-      <div className="form-grid">
+      <h1 className="heading">Editar Factura de Compra</h1>
+      <div className="grid-box">
         <div>
-          <label className="form-label">Numero de Factura</label>
+          <strong>Numero de Factura</strong>
           <input
             type="text"
             name="numBill"
             value={bill.numBill}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Número de Control</label>
+          <strong>Número de Control</strong>
           <input
             type="text"
             name="numControl"
             value={bill.numControl}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Proveedor</label>
+          <strong>Proveedor</strong>
           <input
             type="text"
             name="nameProvider"
             value={bill.nameProvider}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">RIF del Proveedor</label>
+          <strong>RIF del Proveedor</strong>
           <input
             type="text"
             name="rifProvider"
             value={bill.rifProvider}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Fecha de Creación</label>
+          <strong>Fecha de Creación</strong>
           <input
             type="date"
             name="dateCreatedOn"
             value={bill.dateCreatedOn}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Fecha de Aplicacion</label>
+          <strong>Fecha de Aplicacion</strong>
           <input
             type="date"
             name="dateApplicationOn"
             value={bill.dateApplicationOn}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Observacion</label>
+          <strong>Observacion</strong>
           <input
             type="text"
             name="observation"
             value={bill.observation}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Tipo de Transacción</label>
+          <strong>Tipo de Transacción</strong>
           <input
             type="text"
             name="transactionType"
             value={bill.transactionType}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Monto Exento</label>
+          <strong>Monto Exento</strong>
           <input
             type="text"
             name="exemptAmount"
             value={bill.exemptAmount}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Monto IVA</label>
+          <strong>Monto IVA</strong>
           <input
             type="text"
             name="ivaAmount"
             value={bill.ivaAmount}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Total de Compra</label>
+          <strong>Total de Compra</strong>
           <input
             type="text"
             name="totalBuy"
             value={bill.totalBuy}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Impuesto Especial</label>
+          <strong>Impuesto Especial</strong>
           <input
             type="text"
             name="taxEspecial"
             value={bill.taxEspecial}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
         <div>
-          <label className="form-label">Tipo de Compra</label>
+          <strong>Tipo de Compra</strong>
           <input
             type="text"
             name="buyType"
             value={bill.buyType}
             onChange={handleInputChange}
-            className="form-input"
+            className="input"
           />
         </div>
       </div>

@@ -45,7 +45,7 @@ function ShowBuyBillDetails() {
           Editar
         </Link>
       </div>
-      <div className="form-grid">
+      <div className="grid-box">
         <div>
           <strong>Número de Control:</strong>
           {bill.numControl}
