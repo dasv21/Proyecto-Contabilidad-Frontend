@@ -88,6 +88,7 @@ function ShowBuyBillDetails() {
         </div>
         <div>
           <strong>Total de Compra: </strong>
+          {/** TODO -> hacer que los montos vengan con decimales*/}
           {bill.totalBuy}
         </div>
         <div>
