@@ -39,8 +39,32 @@ function AddClientForm() {
   return (
     <form className="container" onSubmit={handleSubmit}>
       <h1 className="heading">Agregar Cliente</h1>
-
       <div className="grid-box">
+        <div>
+          <strong>Nombre Legal: </strong>
+
+          <input
+            type="text"
+            name="legalName"
+            placeholder="Nombre Legal"
+            value={formData.legalName}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div>
+          <strong>Nombre Corto: </strong>
+          <input
+            type="text"
+            name="shortName"
+            placeholder="Nombre Corto"
+            value={formData.shortName}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
         <div>
           <strong>RIF</strong>
           <input
@@ -54,32 +78,7 @@ function AddClientForm() {
           />
         </div>
         <div>
-          <strong>Nombre Corto</strong>
-          <input
-            type="text"
-            name="shortName"
-            placeholder="Nombre Corto"
-            value={formData.shortName}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Nombre Legal</strong>
-
-          <input
-            type="text"
-            name="legalName"
-            placeholder="Nombre Legal"
-            value={formData.legalName}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Email</strong>
+          <strong>Email: </strong>
           <input
             type="email"
             name="email"
@@ -91,19 +90,7 @@ function AddClientForm() {
           />
         </div>
         <div>
-          <strong>Dirección</strong>
-          <input
-            type="text"
-            name="address"
-            placeholder="Dirección"
-            value={formData.address}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Contador</strong>
+          <strong>Contador: </strong>
           <input
             type="text"
             name="accountant"
@@ -115,7 +102,19 @@ function AddClientForm() {
           />
         </div>
         <div>
-          <strong>Teléfonos</strong>
+          <strong>Dirección: </strong>
+          <input
+            type="text"
+            name="address"
+            placeholder="Dirección"
+            value={formData.address}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div>
+          <strong>Teléfonos: </strong>
           <input
             type="text"
             placeholder="Principal"

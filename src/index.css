@@ -25,7 +25,7 @@
 }
 
 .input {
-  @apply w-full px-2 py-1 mb-2 border rounded text-gray-500;
+  @apply w-full px-2 py-1 mb-2 border rounded text-gray-600;
 }
 
 /* Button*/

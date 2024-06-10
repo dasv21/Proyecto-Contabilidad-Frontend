@@ -55,27 +55,7 @@ function EditClientForm() {
       <h1 className="heading">Editar Cliente</h1>
       <div className="grid-box">
         <div>
-          <strong>RIF</strong>
-          <input
-            type="text"
-            name="rif"
-            value={client.rif}
-            onChange={handleInputChange}
-            className="input"
-          />
-        </div>
-        <div>
-          <strong>Nombre Corto</strong>
-          <input
-            type="text"
-            name="shortName"
-            value={client.shortName}
-            onChange={handleInputChange}
-            className="input"
-          />
-        </div>
-        <div>
-          <strong>Nombre Legal</strong>
+          <strong>Nombre Legal: </strong>
           <input
             type="text"
             name="legalName"
@@ -85,7 +65,28 @@ function EditClientForm() {
           />
         </div>
         <div>
-          <strong>Email</strong>
+          <strong>Nombre Corto: </strong>
+          <input
+            type="text"
+            name="shortName"
+            value={client.shortName}
+            onChange={handleInputChange}
+            className="input"
+          />
+        </div>
+        <div>
+          <strong>RIF: </strong>
+          <input
+            type="text"
+            name="rif"
+            value={client.rif}
+            onChange={handleInputChange}
+            className="input"
+          />
+        </div>
+
+        <div>
+          <strong>Email: </strong>
           <input
             type="email"
             name="email"
@@ -95,17 +96,7 @@ function EditClientForm() {
           />
         </div>
         <div>
-          <strong>Dirección</strong>
-          <input
-            type="text"
-            name="address"
-            value={client.address}
-            onChange={handleInputChange}
-            className="input"
-          />
-        </div>
-        <div>
-          <strong>Contador</strong>
+          <strong>Contador: </strong>
           <input
             type="text"
             name="accountant"
@@ -115,7 +106,17 @@ function EditClientForm() {
           />
         </div>
         <div>
-          <strong>Teléfonos</strong>
+          <strong>Dirección: </strong>
+          <input
+            type="text"
+            name="address"
+            value={client.address}
+            onChange={handleInputChange}
+            className="input"
+          />
+        </div>
+        <div>
+          <strong>Teléfonos: </strong>
           {client.phones.map((phone, index) => (
             <input
               key={index}

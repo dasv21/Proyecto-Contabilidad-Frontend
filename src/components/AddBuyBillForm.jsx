@@ -44,7 +44,7 @@ function AddBuyBillForm() {
       <h1 className="heading">Agregar Nueva Factura de Compra</h1>
       <div className="grid-box">
         <div>
-          <strong>Número de Factura</strong>
+          <strong>Número de Factura: </strong>
           <input
             type="text"
             name="numBill"
@@ -56,7 +56,7 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Número de Control</strong>
+          <strong>Número de Control: </strong>
           <input
             type="text"
             name="numControl"
@@ -68,7 +68,7 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Nombre del Proveedor</strong>
+          <strong>Nombre del Proveedor: </strong>
           <input
             type="text"
             name="nameProvider"
@@ -80,7 +80,7 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>RIF del Proveedor</strong>
+          <strong>RIF del Proveedor: </strong>
           <input
             type="text"
             name="rifProvider"
@@ -92,43 +92,7 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Fecha de Creación</strong>
-          <input
-            type="date"
-            name="dateCreatedOn"
-            placeholder="Fecha de Creación"
-            value={formData.dateCreatedOn}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Fecha de Aplicación</strong>
-          <input
-            type="date"
-            name="dateApplicationOn"
-            placeholder="Fecha de Aplicación"
-            value={formData.dateApplicationOn}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Tipo de Compra</strong>
-          <input
-            type="text"
-            name="buyType"
-            placeholder="Tipo de Compra"
-            value={formData.buyType}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Tipo de Transacción</strong>
+          <strong>Tipo de Transacción: </strong>
           <input
             type="text"
             name="transactionType"
@@ -140,7 +104,43 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Monto Exento</strong>
+          <strong>Tipo de Compra: </strong>
+          <input
+            type="text"
+            name="buyType"
+            placeholder="Tipo de Compra"
+            value={formData.buyType}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div>
+          <strong>Fecha de Creación: </strong>
+          <input
+            type="date"
+            name="dateCreatedOn"
+            placeholder="Fecha de Creación"
+            value={formData.dateCreatedOn}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div>
+          <strong>Fecha de Aplicación: </strong>
+          <input
+            type="date"
+            name="dateApplicationOn"
+            placeholder="Fecha de Aplicación"
+            value={formData.dateApplicationOn}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div>
+          <strong>Monto Exento: </strong>
           <input
             type="number"
             name="exemptAmount"
@@ -152,7 +152,7 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Monto IVA</strong>
+          <strong>Monto IVA: </strong>
           <input
             type="number"
             name="ivaAmount"
@@ -164,7 +164,7 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Total de Compra</strong>
+          <strong>Total de Compra: </strong>
           <input
             type="number"
             name="totalBuy"
@@ -176,7 +176,7 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Impuesto Especial</strong>
+          <strong>Impuesto Especial: </strong>
           <input
             type="number"
             name="taxEspecial"
@@ -188,7 +188,7 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Observación</strong>
+          <strong>Observación: </strong>
           <input
             type="text"
             name="observation"

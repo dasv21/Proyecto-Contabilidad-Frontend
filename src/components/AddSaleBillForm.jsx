@@ -43,7 +43,7 @@ function AddSaleBillForm() {
       <h1 className="heading">Agregar Nueva Factura de Venta</h1>
       <div className="grid-box">
         <div>
-          <strong>Número de Factura</strong>
+          <strong>Número de Factura: </strong>
           <input
             type="text"
             name="numBill"
@@ -55,7 +55,7 @@ function AddSaleBillForm() {
           />
         </div>
         <div>
-          <strong>Número de Control</strong>
+          <strong>Número de Control: </strong>
           <input
             type="text"
             name="numControl"
@@ -67,7 +67,7 @@ function AddSaleBillForm() {
           />
         </div>
         <div>
-          <strong>Nombre del Consumidor</strong>
+          <strong>Nombre del Consumidor: </strong>
           <input
             type="text"
             name="nameConsumer"
@@ -79,7 +79,7 @@ function AddSaleBillForm() {
           />
         </div>
         <div>
-          <strong>RIF del Consumidor</strong>
+          <strong>RIF del Consumidor: </strong>
           <input
             type="text"
             name="rifConsumer"
@@ -91,43 +91,7 @@ function AddSaleBillForm() {
           />
         </div>
         <div>
-          <strong>Fecha de Creación</strong>
-          <input
-            type="date"
-            name="dateCreatedOn"
-            placeholder="Fecha de Creación"
-            value={formData.dateCreatedOn}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Fecha de Aplicación</strong>
-          <input
-            type="date"
-            name="dateApplicationOn"
-            placeholder="Fecha de Aplicación"
-            value={formData.dateApplicationOn}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Tipo de Venta</strong>
-          <input
-            type="text"
-            name="saleType"
-            placeholder="Tipo de Venta"
-            value={formData.saleType}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Tipo de Transacción</strong>
+          <strong>Tipo de Transacción: </strong>
           <input
             type="text"
             name="transactionType"
@@ -139,7 +103,43 @@ function AddSaleBillForm() {
           />
         </div>
         <div>
-          <strong>Monto Exento</strong>
+          <strong>Tipo de Venta: </strong>
+          <input
+            type="text"
+            name="saleType"
+            placeholder="Tipo de Venta"
+            value={formData.saleType}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div>
+          <strong>Fecha de Creación: </strong>
+          <input
+            type="date"
+            name="dateCreatedOn"
+            placeholder="Fecha de Creación"
+            value={formData.dateCreatedOn}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div>
+          <strong>Fecha de Aplicación: </strong>
+          <input
+            type="date"
+            name="dateApplicationOn"
+            placeholder="Fecha de Aplicación"
+            value={formData.dateApplicationOn}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div>
+          <strong>Monto Exento: </strong>
           <input
             type="number"
             name="exemptAmount"
@@ -151,7 +151,7 @@ function AddSaleBillForm() {
           />
         </div>
         <div>
-          <strong>Monto IVA</strong>
+          <strong>Monto IVA: </strong>
           <input
             type="number"
             name="ivaAmount"
@@ -163,7 +163,7 @@ function AddSaleBillForm() {
           />
         </div>
         <div>
-          <strong>Total de Venta</strong>
+          <strong>Total de Venta: </strong>
           <input
             type="number"
             name="totalSale"
@@ -175,7 +175,7 @@ function AddSaleBillForm() {
           />
         </div>
         <div>
-          <strong>Observación</strong>
+          <strong>Observación: </strong>
           <input
             type="text"
             name="observation"

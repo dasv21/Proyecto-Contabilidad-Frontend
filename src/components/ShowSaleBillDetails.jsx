@@ -51,12 +51,16 @@ function ShowSaleBillDetails() {
           {bill.numControl}
         </div>
         <div>
-          <strong>Consumidor: </strong>
+          <strong>Nombre del Consumidor: </strong>
           {bill.nameConsumer}
         </div>
         <div>
           <strong>RIF del Consumidor: </strong>
           {bill.rifConsumer}
+        </div>
+        <div>
+          <strong>Tipo de Transacción: </strong>
+          {bill.transactionType}
         </div>
         <div>
           <strong>Fecha de Creación: </strong>
@@ -65,18 +69,6 @@ function ShowSaleBillDetails() {
         <div>
           <strong>Fecha de Aplicación: </strong>
           {new Date(bill.dateApplicationOn).toLocaleDateString()}
-        </div>
-        <div>
-          <strong>Creado en: </strong>
-          {new Date(bill.createOn).toLocaleString()}
-        </div>
-        <div>
-          <strong>Actualizado en: </strong>
-          {new Date(bill.updateOn).toLocaleString()}
-        </div>
-        <div>
-          <strong>Tipo de Transacción: </strong>
-          {bill.transactionType}
         </div>
         <div>
           <strong>Monto Exento: </strong>
@@ -93,6 +85,14 @@ function ShowSaleBillDetails() {
         <div>
           <strong>Tipo de Venta: </strong>
           {bill.saleType}
+        </div>
+        <div>
+          <strong>Creado en: </strong>
+          {new Date(bill.createOn).toLocaleString()}
+        </div>
+        <div>
+          <strong>Actualizado en: </strong>
+          {new Date(bill.updateOn).toLocaleString()}
         </div>
         <div>
           <strong>Observación: </strong>

@@ -51,13 +51,18 @@ function ShowBuyBillDetails() {
           {bill.numControl}
         </div>
         <div>
-          <strong>Proveedor: </strong>
+          <strong>Tipo de Transacción: </strong>
+          {bill.transactionType}
+        </div>
+        <div>
+          <strong>Nombre del Proveedor: </strong>
           {bill.nameProvider}
         </div>
         <div>
           <strong>RIF del Proveedor: </strong>
           {bill.rifProvider}
         </div>
+
         <div>
           <strong>Fecha de Creación: </strong>
           {new Date(bill.dateCreatedOn).toLocaleDateString()}
@@ -65,6 +70,23 @@ function ShowBuyBillDetails() {
         <div>
           <strong>Fecha de Aplicación: </strong>
           {new Date(bill.dateApplicationOn).toLocaleDateString()}
+        </div>
+
+        <div>
+          <strong>Monto Exento: </strong>
+          {bill.exemptAmount}
+        </div>
+        <div>
+          <strong>Monto IVA: </strong>
+          {bill.ivaAmount}
+        </div>
+        <div>
+          <strong>Impuesto Especial: </strong>
+          {bill.taxEspecial}
+        </div>
+        <div>
+          <strong>Tipo de Compra: </strong>
+          {bill.buyType}
         </div>
         <div>
           <strong>Creado en: </strong>
@@ -75,29 +97,9 @@ function ShowBuyBillDetails() {
           {new Date(bill.updateOn).toLocaleString()}
         </div>
         <div>
-          <strong>Tipo de Transacción: </strong>
-          {bill.transactionType}
-        </div>
-        <div>
-          <strong>Monto Exento: </strong>
-          {bill.exemptAmount}
-        </div>
-        <div>
-          <strong>Monto IVA: </strong>
-          {bill.ivaAmount}
-        </div>
-        <div>
           <strong>Total de Compra: </strong>
           {/** TODO -> hacer que los montos vengan con decimales*/}
           {bill.totalBuy}
-        </div>
-        <div>
-          <strong>Impuesto Especial: </strong>
-          {bill.taxEspecial}
-        </div>
-        <div>
-          <strong>Tipo de Compra: </strong>
-          {bill.buyType}
         </div>
         <div>
           <strong>Observación:</strong>
