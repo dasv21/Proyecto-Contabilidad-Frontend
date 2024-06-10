@@ -2,22 +2,21 @@ import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import api from "../api/api";
 
-function AddBuyBillForm() {
+function AddSaleBillForm() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     numBill: "",
     numControl: "",
-    nameProvider: "",
-    rifProvider: "",
+    nameConsumer: "",
+    rifConsumer: "",
     dateCreatedOn: "",
     dateApplicationOn: "",
-    buyType: "",
+    saleType: "",
     transactionType: "",
     exemptAmount: "",
     ivaAmount: "",
-    totalBuy: "",
-    taxEspecial: "",
+    totalSale: "",
     observation: "",
     companyId: id,
   });
@@ -30,9 +29,9 @@ function AddBuyBillForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.post("/bill/buy-bill", formData);
+      await api.post("/bill/sale-bill", formData);
       alert("Factura creada exitosamente");
-      navigate(`/client/${id}/buy-bill`);
+      navigate(`/client/${id}/sale-bill`);
     } catch (error) {
       console.error("Error creando factura", error);
       alert("Hubo un error al crear la factura");
@@ -41,7 +40,7 @@ function AddBuyBillForm() {
 
   return (
     <form className="container" onSubmit={handleSubmit}>
-      <h1 className="heading">Agregar Nueva Factura de Compra</h1>
+      <h1 className="heading">Agregar Nueva Factura de Venta</h1>
       <div className="grid-box">
         <div>
           <strong>Número de Factura</strong>
@@ -68,24 +67,24 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Nombre del Proveedor</strong>
+          <strong>Nombre del Consumidor</strong>
           <input
             type="text"
-            name="nameProvider"
-            placeholder="Nombre del Proveedor"
-            value={formData.nameProvider}
+            name="nameConsumer"
+            placeholder="Nombre del Consumidor"
+            value={formData.nameConsumer}
             onChange={handleChange}
             className="input"
             required
           />
         </div>
         <div>
-          <strong>RIF del Proveedor</strong>
+          <strong>RIF del Consumidor</strong>
           <input
             type="text"
-            name="rifProvider"
-            placeholder="RIF del Proveedor"
-            value={formData.rifProvider}
+            name="rifConsumer"
+            placeholder="RIF del Consumidor"
+            value={formData.rifConsumer}
             onChange={handleChange}
             className="input"
             required
@@ -116,12 +115,12 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Tipo de Compra</strong>
+          <strong>Tipo de Venta</strong>
           <input
             type="text"
-            name="buyType"
-            placeholder="Tipo de Compra"
-            value={formData.buyType}
+            name="saleType"
+            placeholder="Tipo de Venta"
+            value={formData.saleType}
             onChange={handleChange}
             className="input"
             required
@@ -164,24 +163,12 @@ function AddBuyBillForm() {
           />
         </div>
         <div>
-          <strong>Total de Compra</strong>
+          <strong>Total de Venta</strong>
           <input
             type="number"
-            name="totalBuy"
-            placeholder="Total de Compra"
-            value={formData.totalBuy}
-            onChange={handleChange}
-            className="input"
-            required
-          />
-        </div>
-        <div>
-          <strong>Impuesto Especial</strong>
-          <input
-            type="number"
-            name="taxEspecial"
-            placeholder="Impuesto Especial"
-            value={formData.taxEspecial}
+            name="totalSale"
+            placeholder="Total de Venta"
+            value={formData.totalSale}
             onChange={handleChange}
             className="input"
             required
@@ -200,7 +187,7 @@ function AddBuyBillForm() {
         </div>
       </div>
       <div className="flex-box">
-        <Link to={`/client/${id}/buy-bill`} className="button">
+        <Link to={`/client/${id}/sale-bill`} className="button">
           Volver
         </Link>
         <button type="submit" className="button">
@@ -211,4 +198,4 @@ function AddBuyBillForm() {
   );
 }
 
-export default AddBuyBillForm;
+export default AddSaleBillForm;

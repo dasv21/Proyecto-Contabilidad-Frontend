@@ -11,6 +11,7 @@ import AddBuyBillForm from "./components/AddBuyBillForm";
 import ShowBuyBillDetails from "./components/ShowBuyBillDetails";
 import EditBuyBillForm from "./components/EditBuyBillForm";
 import ShowSaleBillDetails from "./components/ShowSaleBillDetails";
+import AddSaleBillForm from "./components/AddSaleBillForm";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           path="/client/:id/sale-bill/:billId"
           element={<ShowSaleBillDetails />}
         />
+        <Route path="/client/:id/sale-bill/add" element={<AddSaleBillForm />} />
       </Routes>
     </Router>
   );

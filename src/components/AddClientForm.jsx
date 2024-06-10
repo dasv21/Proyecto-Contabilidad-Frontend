@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../api/api";
 
-function AddClient() {
+function AddClientForm() {
   const [formData, setFormData] = useState({
     rif: "",
     shortName: "",
@@ -145,4 +145,4 @@ function AddClient() {
   );
 }
 
-export default AddClient;
+export default AddClientForm;
